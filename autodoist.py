@@ -903,7 +903,7 @@ def main():
     parser = argparse.ArgumentParser(
         formatter_class=make_wide(argparse.HelpFormatter, w=120, h=60))
     parser.add_argument('-a', '--api_key',
-                        help='takes your Todoist API Key.', default=os.environ.get('TODOIST_API_KEY') type=str)
+                        help='takes your Todoist API Key.', default=os.environ.get('TODOIST_API_KEY'), type=str)
     parser.add_argument(
         '-l', '--label', help='enable next action labelling. Define which label to use.', type=str)
     parser.add_argument(
