@@ -809,9 +809,10 @@ def autodoist_magic(args, api, label_id, regen_labels_id):
                                 future_diff = (
                                     due_date - datetime.today()).days
                                 if future_diff >= args.hide_future:
-                                    remove_label(
-                                        item, label_id, overview_item_ids, overview_item_labels)
-                                    continue
+                                    if remove_label(
+                                        item, label_id, overview_item_ids, overview_item_labels):
+                                        first_found_section = False
+                                        continue
                         except:
                             # Hide-future not set, skip
                             continue
