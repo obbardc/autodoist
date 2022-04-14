@@ -606,8 +606,8 @@ def autodoist_magic(args, api, label_id, regen_labels_id):
                 section_type, section_type_changed = get_section_type(
                     args, section)
                 if section_type is not None:
-                    logging.debug('Identified \'%s\' as %s type',
-                                section['name'], section_type)
+                    logging.debug('Identified \'%s\'.\'%s\' as %s type',
+                                project['name'], section['name'], section_type)
 
                 # Get all items for the section
                 items = [x for x in project_items if x['section_id']
