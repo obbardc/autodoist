@@ -623,13 +623,12 @@ def autodoist_magic(args, api, label_id, regen_labels_id):
 
                 # If a type has changed, clean label for good measure
                 if label_id is not None:
-                    if project_type_changed == 1 or section_type_changed == 1:
-                        # Remove labels
-                        [remove_label(item, label_id, overview_item_ids,
-                                      overview_item_labels) for item in items]
-                        # Remove parent types
-                        for item in items:
-                            item['parent_type'] = None
+                    # Remove labels
+                    [remove_label(item, label_id, overview_item_ids,
+                                  overview_item_labels) for item in items]
+                    # Remove parent types
+                    for item in items:
+                        item['parent_type'] = None
 
                 # For all items in this section
                 for item in items:
