@@ -336,6 +336,7 @@ def add_label(item, label, overview_item_ids, overview_item_labels):
 # Logic to remove a label from an item
 
 
+# returns True if the label was removed; False otherwise
 def remove_label(item, label, overview_item_ids, overview_item_labels):
     if label in item['labels']:
         labels = item['labels']
@@ -347,6 +348,8 @@ def remove_label(item, label, overview_item_ids, overview_item_labels):
         except:
             overview_item_ids[str(item['id'])] = -1
         overview_item_labels[str(item['id'])] = labels
+        return True
+    return False
 
 # Ensure labels are only issued once per item
 
